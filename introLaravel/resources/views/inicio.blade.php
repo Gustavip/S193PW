@@ -19,13 +19,14 @@
 </head>
 <body>
 
-  <div class="d-flex justify-content-center align-items-center full-height">
+  <div class="d-flex flex-column justify-content-center align-items-center full-height">
 
-   <h1 class="display-1">Binevenido Turista!</h1>
+   <h1 class="display-1">Binnevenido Turista BB!</h1>
    <p>Preciona el boton para iniciar...</p>
 
-   <a href="{{ route('rutaformulario') }}" class="btn btn-primary">Ir al registro</a>
-   {{-- <a href="/formulario" class="btn btn-danger">Ir al registro</a> --}}
+  <!--<a href="/form" class="btn btn-primary">Ir al registro</a> -->
+   <a href="/form" class="btn btn-danger">Ir al registro</a> 
+   <a href="{{ route('rutaFormulario') }}" class="btn btn-primary">Ir al registro</a> 
    
   </div>
     
