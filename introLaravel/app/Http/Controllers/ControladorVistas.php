@@ -12,7 +12,7 @@ class ControladorVistas extends Controller
     {
         return view('inicio');
     }
-    public function fromulario()
+    public function formulario()
     {
     
         return view('formulario');
@@ -21,4 +21,23 @@ class ControladorVistas extends Controller
     {
         return view('clientes');
     }
+
+    public function procesarCliente(request $peticion)
+    {
+    /* return 'si llego la info del cliente wey'; */
+       /*  Muestra todo lo que trae la peticion  */
+   /*  return $peticion->all(); */
+    
+   /* ruta de donde se realizo la peticion  */
+   /*  return $peticion->path(); */
+
+   /*  Url del origen la peticion */ 
+    /* return $peticion->url(); */
+
+   /*  Url del origen la peticion  */
+    return $peticion->ip();
+
+
+    }
+
 }

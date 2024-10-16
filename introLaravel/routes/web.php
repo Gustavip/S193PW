@@ -18,11 +18,17 @@ Route::get('/consultar', function () {
 Route::view('/','inicio')->name('rutaInicio');
 Route::view('/form','formulario')->name('rutaFormulario');
 Route::view('/consultar','clientes')->name('rutaClientes'); */
-
-Route::view('/component','componentes')->name('rutacomponent');  
+/* 
+Route::view('/component','componentes')->name('rutacomponent');  */ 
 
 Route::get('/', [ControladorVistas::class, 'home'])->name('rutaInicio');
-Route::get('/form', [ControladorVistas::class, 'formulario'])->name('rutaForm');
-Route::get('/consultar', [ControladorVistas::class, 'consulta'])->name('rutaForm');
+
+Route::get('/form', [ControladorVistas::class, 'formulario'])->name('rutaFormulario');
+
+Route::get('/consultar', [ControladorVistas::class, 'consulta'])->name('rutaClientes');
+
+Route::post('/enviarCliente', [ControladorVistas::class, 'procesarCliente'])->name('rutaEnviar');
+
+
 
 
