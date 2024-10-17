@@ -12,7 +12,7 @@
         <p>S193</p>
         <p>Universidad politecnica de queretaro</p>
         <p>Soy ING</p>
-        
+        <a href="{{ route('repaso1') }}" class="btn btn-primary mt-3">REPASO 1</a>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
