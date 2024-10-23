@@ -35,9 +35,30 @@ class ControladorVistas extends Controller
     /* return $peticion->url(); */
 
    /*  Url del origen la peticion  */
-    return $peticion->ip();
+
+   //redireccion usando la ruta 
+   /*  return redirect('/');
+ */
+      //redireccion usando el nombre de la ruta 
+   /*  return redirect()->route('rutaClientes'); */
+
+    //redireccion al origen de la peticion 
+    /* return back(); */
+
+    //redireccion con variable adjunta
+    /* $id= [['usuario'=>1],['usuario'=>2]];
+
+    return view('formulario',compact('id')); */
+
+   //redireccion con un mensaje flash en session 
+    $usuario= $peticion->input('txtnombre');
+
+    session()->flash('exito','se guardo el usuario: '.$usuario);
+    return to_route('rutaFormulario');
 
 
+
+       
     }
 
 }

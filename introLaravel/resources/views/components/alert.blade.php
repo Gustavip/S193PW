@@ -2,7 +2,7 @@
     
 <div class="alert alert-{{$tipo}}" role="arlet">
 
- Soy un Alert {{$slot}} 
+  {{$slot}} 
 
 </div>
 </div>
