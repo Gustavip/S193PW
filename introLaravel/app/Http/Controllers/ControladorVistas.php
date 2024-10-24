@@ -24,33 +24,16 @@ class ControladorVistas extends Controller
 
     public function procesarCliente(request $peticion)
     {
-    /* return 'si llego la info del cliente wey'; */
-       /*  Muestra todo lo que trae la peticion  */
-   /*  return $peticion->all(); */
+
+
+
+        $validacion= $peticion->validate([
+            'txtnombre'=> 'required |min:4 |max:10',
+            'txtapellido'=> 'required |min:4 |max:10',
+            'txtcorreo'=> 'required | email:rfc,dns',
+            'txttelefono'=> 'required |numeric',
+        ]);
     
-   /* ruta de donde se realizo la peticion  */
-   /*  return $peticion->path(); */
-
-   /*  Url del origen la peticion */ 
-    /* return $peticion->url(); */
-
-   /*  Url del origen la peticion  */
-
-   //redireccion usando la ruta 
-   /*  return redirect('/');
- */
-      //redireccion usando el nombre de la ruta 
-   /*  return redirect()->route('rutaClientes'); */
-
-    //redireccion al origen de la peticion 
-    /* return back(); */
-
-    //redireccion con variable adjunta
-    /* $id= [['usuario'=>1],['usuario'=>2]];
-
-    return view('formulario',compact('id')); */
-
-   //redireccion con un mensaje flash en session 
     $usuario= $peticion->input('txtnombre');
 
     session()->flash('exito','se guardo el usuario: '.$usuario);
