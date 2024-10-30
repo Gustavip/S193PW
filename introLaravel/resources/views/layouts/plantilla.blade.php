@@ -12,16 +12,16 @@
 {{--inicia navbar--}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{route('rutaInicio')}}"> Turista sin Maps</a>
+            <a class="navbar-brand" href="{{route('rutaInicio')}}"> {{__('Turista sin Maps') }}</a>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('rutaFormulario')? 'text-warning' : '' }}" aria-current="page" href="{{ route('rutaFormulario') }}">Registro Clientes</a>
+                    <a class="nav-link {{ request()->routeIs('rutaFormulario')? 'text-warning' : '' }}" aria-current="page" href="{{ route('rutaFormulario') }}">{{__('Registro Clientes') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('rutaClientes')? 'text-warning' : ''}}" href="{{ route('rutaClientes') }}">Consulta Clientes</a>
+                    <a class="nav-link {{ request()->routeIs('rutaClientes')? 'text-warning' : ''}}" href="{{ route('rutaClientes') }}">{{__('Consulta Clientes') }}</a>
                 </li>
 
                 </ul>
