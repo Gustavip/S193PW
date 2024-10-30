@@ -6,6 +6,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [LibroController::class, 'inicio'])->name('principal');
-Route::get('/registro', [LibroController::class, 'crear'])->name('registro_libro');
-Route::post('/registro', [LibroController::class, 'almacenar'])->name('libro.almacenar');
+use App\Http\Controllers\LibroController;
+
+Route::get('/', [LibroController::class, 'index'])->name('principal'); /* ruta principal de inicio  */
+Route::get('/registro', [LibroController::class, 'create'])->name('libro.create'); /* ruta para el registro */
+Route::post('/registro', [LibroController::class, 'store'])->name('libro.store'); /* ruta para guardar  */
+
