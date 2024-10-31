@@ -10,7 +10,7 @@
     
 </head>
 <body>
-    {{-- inicia navbar --}}
+   
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('principal') }}">Biblioteca</a>
@@ -25,14 +25,14 @@
             </div>
         </div>
     </nav>
-    {{-- termina navbar --}}
+    
 
     <div class="container">
         @yield('content')
     </div>
 
     <footer>
-        <p>Biblioteca </p>
+        <p>Biblioteca</p>
     </footer>
 </html>
 
