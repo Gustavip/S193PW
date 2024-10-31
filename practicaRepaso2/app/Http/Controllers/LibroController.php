@@ -22,15 +22,11 @@ class LibroController extends Controller
     {
         // Validaciones
         $request->validate([
-            'isbn' => 'required|numeric|digits:13',            // Solo números, exactamente 13 dígitos
+            'isbn' => 'required|numeric|digits:13',            // Solo números 13 dígitos
             'Titulo' => 'required|string|max:150',             // String, máximo 150 caracteres
             'Autor' => 'required|string|max:255',              // String, máximo 255 caracteres
             'Paginas' => 'required|integer|min:1',             // Solo enteros positivos
-            'Año' => [
-                'required',
-                'integer',
-                'digits:4',
-                'min:1000',                                    // Mínimo año permitido
+            'Año' => ['required','integer','digits:4','min:1000',   // Mínimo año permitido
                 'max:' . date('Y'),                            // Máximo hasta el año actual
             ],
             'Editorial' => 'required|string|max:255',          // String, máximo 255 caracteres
