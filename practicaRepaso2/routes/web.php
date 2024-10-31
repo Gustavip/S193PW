@@ -12,3 +12,4 @@ Route::get('/', [LibroController::class, 'index'])->name('principal'); /* ruta p
 Route::get('/registro', [LibroController::class, 'create'])->name('libro.create'); /* ruta para el registro */
 Route::post('/registro', [LibroController::class, 'store'])->name('libro.store'); /* ruta para guardar  */
 
+
