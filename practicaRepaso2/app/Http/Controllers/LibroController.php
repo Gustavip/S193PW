@@ -28,8 +28,8 @@ class LibroController extends Controller
             'Titulo' => 'required|string|max:150',            
             'Autor' => 'required|string|max:255',             
             'Paginas' => 'required|integer|min:1',            
-            'Año' => 'required','integer','digits:4','min:1000',   
-                'max:' . date('Y'),
+            'Año' => 'required|integer|digits:4|min:1000|max:2024',
+
             'Editorial' => 'required|string|max:255',         
             'Correo' => 'required|email'  
         ]);
