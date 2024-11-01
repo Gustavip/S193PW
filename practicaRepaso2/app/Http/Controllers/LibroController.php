@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validaciones;
 
 class LibroController extends Controller
 {
@@ -13,31 +14,36 @@ class LibroController extends Controller
         return view('principal');
     }
 
-    public function create()
+    public function Registro()
     {
         return view('registro_libro');
     }
 
-    public function store(Request $request)
+    public function procesarFormulario(validaciones $peticion)
     {
-        // Validaciones
-        $request->validate([
-            'isbn' => 'required|numeric|digits:13',            // Solo números 13 dígitos
-            'Titulo' => 'required|string|max:150',             // String, máximo 150 caracteres
-            'Autor' => 'required|string|max:255',              // String, máximo 255 caracteres
-            'Paginas' => 'required|integer|min:1',             // Solo enteros positivos
-            'Año' => ['required','integer','digits:4','min:1000',   // Mínimo año permitido
-                'max:' . date('Y'),                            // Máximo hasta el año actual
-            ],
-            'Editorial' => 'required|string|max:255',          // String, máximo 255 caracteres
-            'Correo' => 'required|email'                       // Formato de correo electrónico
+       
+        $validacion= $peticion->validate
+        ([
+            'isbn' => 'required|numeric|digits:13',            
+            'Titulo' => 'required|string|max:150',            
+            'Autor' => 'required|string|max:255',             
+            'Paginas' => 'required|integer|min:1',            
+            'Año' => 'required','integer','digits:4','min:1000',   
+                'max:' . date('Y'),
+            'Editorial' => 'required|string|max:255',         
+            'Correo' => 'required|email'  
         ]);
-    
-        // Guardar en la base de datos (suponiendo que el modelo Libro existe)
-        // \App\Models\Libro::create($request->all());
-    
-        // Mensaje de éxito
-        return redirect()->route('libro.create')->with('success', "Libro '{$request->Titulo}' guardado correctamente");
+
+   
+
+        $libro = $peticion->input('Titulo');
+        session()->flash('exito', 'todo correcto:libro'.$libro.' guardado ' );
+        return to_route('rutaregistro');
+        
+
+
     }
+
+
     
 }

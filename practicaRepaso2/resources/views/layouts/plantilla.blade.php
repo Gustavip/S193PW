@@ -13,12 +13,12 @@
    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('principal') }}">Biblioteca</a>
+            <a class="navbar-brand" href="{{ route('principal') }}">{{__('Biblioteca') }}</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('libro.create') ? 'text-warning' : '' }}" href="{{ route('libro.create') }}">
-                            Registro de Libros
+                        <a class="nav-link {{ request()->routeIs('rutaregistro') ? 'text-warning' : '' }}" href="{{ route('rutaregistro') }}">
+                            {{__('Registro de Libro') }}
                         </a>
                     </li>
                 </ul>
@@ -27,12 +27,12 @@
     </nav>
     
 
-    <div class="container">
+    <div class="container my-4">
         @yield('content')
     </div>
 
-    <footer>
-        <p>Biblioteca</p>
+    <footer class= "bg-dark text-warning text-center py-3">
+        <p>Biblioteca VIP 31/10/2024</p>
     </footer>
 </html>
 
