@@ -1,23 +1,27 @@
-<! DOCTYPE html>
-<html lang="en"
-<head>
+  <! DOCTYPE html>
+   <html lang="en"
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inicio</title>
-</head>
-    <div class="card-header fs-5 text-primari>
-    <form>
+    <title>Registro</title>
+     </head>
+   <div class="card-header fs-5 text-primari>
+          
+                <form>
+                    
+                @csrf 
+    
                     <div class="mb-3">
                         <label for="prenda" class="form-label">prenda:</label>
-                        <input type="textprenda" class="form-control" id="prenda">
+                        <input type="textprenda" class="form-control" id="txtprenda">
                     </div>
                     <div class="mb-3">
                         <label for="color" class="form-label">color:</label>
-                        <input type="textcolor" class="form-control" id="apellido">
+                        <input type="textcolor" class="form-control" id="txtapellido">
                     </div>
                     <div class="mb-3">
                         <label for="cantidad" class="form-label">cantidad:</label>
-                        <input type="txtcantidad" class="form-control" id="cantidad">
+                        <input type="txtcantidad" class="form-control" id="txtcantidad">
 
                         </div>
             </div>
