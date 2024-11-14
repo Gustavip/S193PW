@@ -21,19 +21,14 @@ Route::view('/consultar','clientes')->name('rutaClientes'); */
 /* 
 Route::view('/component','componentes')->name('rutacomponent');  */ 
 
-/* rutas para controlador vistas  */
-
 Route::get('/', [ControladorVistas::class, 'home'])->name('rutaInicio');
 
-
+Route::get('/form', [ControladorVistas::class, 'formulario'])->name('rutaFormulario');
 
 Route::get('/consultar', [ControladorVistas::class, 'consulta'])->name('rutaClientes');
 
 Route::post('/enviarCliente', [ControladorVistas::class, 'procesarCliente'])->name('rutaEnviar');
 
-/* rutas para controlador clientesController */
 
-
-Route::get('/cliente/create', [ClienteController::class, 'create'])->name('rutaFormulario');
 
 
