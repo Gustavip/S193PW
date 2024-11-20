@@ -31,6 +31,8 @@ Route::get('/cliente/create', [ClienteController::class, 'create'])->name('rutaF
 
 Route::post('/cliente', [ClienteController::class, 'store'])->name('rutaEnviar');
 
-Route::get('/cliente', [ClienteController::class, 'index'])->name('rutaClientes');
 
+Route::get('/clientes', [clienteController::class, 'index'])->name('rutaClientes');
+
+Route::put('/clientes/{id}', [clienteController::class, 'update'])->name('clientes.update');
 
