@@ -34,5 +34,9 @@ Route::post('/cliente', [ClienteController::class, 'store'])->name('rutaEnviar')
 
 Route::get('/clientes', [clienteController::class, 'index'])->name('rutaClientes');
 
-Route::put('/clientes/{id}', [clienteController::class, 'update'])->name('clientes.update');
+Route::put('/clientes/{id}', [clienteController::class, 'update'])->name('rutaActualizar');
+
+Route::get('/clientes/{id}/editar', [clienteController::class, 'edit'])->name('rutaEditar');
+
+Route::delete('/clientes/{id}', [clienteController::class, 'destroy'])->name('rutaEliminar');
 

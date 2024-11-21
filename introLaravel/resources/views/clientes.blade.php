@@ -1,8 +1,22 @@
 @extends('layouts.plantilla')
 
 @section('contenido')
+
     {{-- Inicia tarjetaCliente --}}
+
+    @if(session('success'))
+    <div class="alert alert-sucess">{{ session('success')}}</div>
+    @endif
+    @if(session('error'))
+    <div class="alert alert-danger">{{ session('error')}}</div>
+    @endif
     <div class="container mt-5 col-md-8">
+    @session('exito')
+       <script> Swal.fire({
+        title: "Respuesta del servidor", 
+        text: "{{$value}} ",
+         icon: "success" }); </script>  
+      @endsession
 
     @foreach ($consultarClientes as $cliente)
     
@@ -22,8 +36,15 @@
         </div>
 
         <div class="card-footer text-muted">
+            <form action="{{ route('rutaEditar', $cliente->id)}}"> 
             <button type="submit" class="btn btn-warning btn-sm"> {{__('Actualizar') }}</button>
-            <button type="submit" class="btn btn-danger btn-sm">  {{__('Eliminar') }} </button>
+            </form>
+
+            <form action="{{ route('rutaEliminar', $cliente->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Seguro que quieres eliminar');">
+    @method("DELETE")
+    @csrf
+    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+</form>
         </div>
     </div>
     @endforeach
